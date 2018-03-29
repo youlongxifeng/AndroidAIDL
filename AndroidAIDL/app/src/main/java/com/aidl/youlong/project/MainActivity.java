@@ -140,4 +140,17 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        try {
+            if (iBookManager != null && iBookManager.asBinder().isBinderAlive()) {
+                iBookManager.unRegisterListener(iOnNewBookArrivedListener);
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+        unbindService(serviceConnection);
+    }
 }
