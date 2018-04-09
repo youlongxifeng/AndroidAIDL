@@ -6,7 +6,6 @@ import android.content.pm.PackageManager;
 import android.os.Binder;
 import android.os.IBinder;
 import android.os.Parcel;
-import android.os.RemoteCallbackList;
 import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -31,10 +30,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class RemoteService extends Service {
     CopyOnWriteArrayList<Book> copyOnWriteArrayList = new CopyOnWriteArrayList<>();
-    /**
-     * 用于存储远程监听Listener的集合
-     */
-    RemoteCallbackList<IOnNewBookArrivedListener> remoteCallbackList = new RemoteCallbackList<>();
     ListenerManagerImpl mListenerManager;
     /**
      * 自定义权限

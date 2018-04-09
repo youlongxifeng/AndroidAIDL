@@ -92,7 +92,6 @@ public class ListenerManagerImpl implements ListenerManager {
         try {
             for (int i = 0; i < count; i++) {
                 mOnPlayChangedListener.getBroadcastItem(i).addBook(book);
-                Log.i("TAG","bookList==2222===addBook="+book);
             }
         } catch (RemoteException e) {
             e.printStackTrace();

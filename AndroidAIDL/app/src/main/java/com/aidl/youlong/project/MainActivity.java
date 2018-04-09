@@ -13,6 +13,8 @@ import android.view.View;
 import com.aidl.youlong.project.aidl.Book;
 import com.aidl.youlong.project.aidl.IBookManager;
 import com.aidl.youlong.project.aidl.IOnNewBookArrivedListener;
+import com.aidl.youlong.project.bean.Person;
+import com.aidl.youlong.project.bean.Person.Student;
 import com.aidl.youlong.project.service.RemoteService;
 
 import java.util.ArrayList;
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Person person=new Person();
+        Student student=new  Person().new Student();
     }
 
     ServiceConnection serviceConnection = new ServiceConnection() {
